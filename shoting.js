@@ -128,7 +128,10 @@ function animate() {
     if (dist - enemy.raduis - player1.raduis < 1) {
       cancelAnimationFrame(animationId);
       setTimeout(() => {
-        alert("Game Over :(");
+        if (confirm("Game Over <3") == true) {
+          location.reload()
+        } 
+        location.reload()
       }, 50);
     }
 
