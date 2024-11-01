@@ -164,5 +164,19 @@ window.addEventListener("click", (e) => {
   );
 });
 
+window.addEventListener("touchend", (e) => {
+const angle = Math.atan2(
+    e.clientY - canvas.height / 2,
+    e.clientX - canvas.width / 2
+  );
+  const velocity = {
+    x: Math.cos(angle) * speed,
+    y: Math.sin(angle) * speed,
+  };
+  projectiless.push(
+    new projectiles(canvas.width / 2, canvas.height / 2, 5, "white", velocity)
+  );
+});
+
 animate();
 SpawnEnemies();
